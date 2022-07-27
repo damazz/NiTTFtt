@@ -1,0 +1,9 @@
+Digits := 15;
+
+with(QuantumChemistry);
+
+mol := ReadXYZ("NiTTFtt.xyz");
+
+vd2 := Variational2RDM(mol, basis="6-31g*", active=[14,14], casscf=true, spin=0, charge=0, conv_tol=1e-6, verbose=5, max_cycle=250);
+
+save vd2,"NiTTFtt_631Gs_S_2020.m";
